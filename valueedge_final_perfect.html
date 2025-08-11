@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValueEdge Consultancy - Coach • Counsel • Create</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+        
+        .text-green-primary {
+            color: #2db814;
+        }
+        
+        .bg-green-primary {
+            background-color: #2db814;
+        }
+        
+        .border-green-primary {
+            border-color: #2db814;
+        }
+        
+        .hover-green:hover {
+            background-color: #2db814;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-container {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            max-height: 60px;
+            object-fit: contain;
+            border: none !important;
+            background: transparent !important;
+        }
+        
+        .section-spacing {
+            padding: 60px 0;
+        }
+        
+        .card-premium {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(45, 184, 20, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .card-premium:hover {
+            transform: translateY(-8px);
+            border-color: #2db814;
+            box-shadow: 0 20px 40px rgba(45, 184, 20, 0.2);
+        }
+        
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(45, 184, 20, 0.1);
+            color: #2db814;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2db814, #25a012);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(45, 184, 20, 0.3);
+            background: linear-gradient(135deg, #25a012, #2db814);
+        }
+        
+        .bullet-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding-left: 0;
+        }
+        
+        .bullet-point i {
+            color: #2db814;
+            margin-right: 12px;
+            margin-top: 2px;
+            font-size: 14px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 32px 0;
+        }
+        
+        .mistake-card {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .approach-card {
+            background: rgba(45, 184, 20, 0.1);
+            border: 1px solid rgba(45, 184, 20, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #2db814, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .subsection-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #2db814;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .logo-container {
+                max-width: 150px;
+            }
+            
+            .logo-container img {
+                max-height: 45px;
+            }
+        }
+        
+        .calendly-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="logo-container">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/ca326943bf89d518478c2c8aa7efe7f3" alt="ValueEdge Consultancy" />
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#approach" class="nav-link">Our Approach</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#schedule" class="btn-primary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Call
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-spacing mt-20 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h1 class="hero-title">Coach • Counsel • Create</h1>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                ValueEdge Consultancy redefines business and legal advisory services with a comprehensive approach that takes you from the first step to the last step of your business journey.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#services" class="btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    Discover Our Services
+                </a>
+                <a href="#schedule" class="border border-green-primary text-green-primary px-8 py-3 rounded-12 hover:bg-green-primary hover:text-white transition-all duration-300">
+                    Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-spacing">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title">About <span class="text-green-primary">ValueEdge</span></h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="subsection-title">Founder - Alok Shah</h3>
+                    <p class="text-gray-300 mb-6">
+                        With over 15 years of comprehensive experience spanning legal expertise and business strategy, Alok Shah brings a unique dual perspective as both a Lawyer and MBA graduate from the prestigious Indian School of Business.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bullet-point">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>MBA from Indian School of Business</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Qualified Legal Professional</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-building"></i>
+                            <span>15+ Years Industry Experience</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-book"></i>
+                            <span>Published Author & Industry Expert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-premium">
+                    <h4 class="text-xl font-semibold text-green-primary mb-4">Our Philosophy</h4>
+                    <p class="text-gray-300">
+                        We believe in a holistic approach to business and legal consultancy. From initial strategy formulation to final execution, ValueEdge Consultancy ensures comprehensive support at every stage of your business journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-spacing">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="section-title">Our <span class="text-green-primary">Services</span></h2>
+            
+            <!-- Business Consultancy -->
+            <div class="mb-16">
+                <h3 class="subsection-title text-center mb-12">Business Consultancy</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Valuation Services -->
+                    <div class="card-premium">
+                        <i class="fas fa-chart-line text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Valuation Services</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Outdated valuation methods</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Ignoring market dynamics</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic approaches</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Multi-model comprehensive approach</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Real-time market intelligence</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Industry-specific methodologies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry Insights -->
+                    <div class="card-premium">
+                        <i class="fas fa-industry text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Industry Insights</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic market research</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Surface-level analysis</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Outdated data sources</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Sector-specific deep analysis</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Actionable intelligence</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Real-time market data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competition Analysis -->
+                    <div class="card-premium">
+                        <i class="fas fa-users text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Competition Analysis</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Surface-level comparison</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Limited scope analysis</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Static assessments</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Strategic intelligence</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Competitive positioning</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Dynamic market mapping</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Analysis -->
+                    <div class="card-premium">
+                        <i class="fas fa-bullhorn text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Marketing Analysis</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Assumption-based strategies</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic targeting</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Limited metrics tracking</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Data-driven insights</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Precise audience targeting</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Comprehensive ROI analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PESTEL Analysis -->
+                    <div class="card-premium">
+                        <i class="fas fa-globe text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">PESTEL Analysis</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Checklist-based approach</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Static assessments</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic frameworks</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Dynamic strategic framework</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Scenario planning</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Contextual analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pitch Decks -->
+                    <div class="card-premium">
+                        <i class="fas fa-presentation text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Pitch Decks</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Template-based presentations</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic storytelling</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Weak value propositions</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Story-driven narratives</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Compelling presentations</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Investor-focused content</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Services -->
+            <div>
+                <h3 class="subsection-title text-center mb-12">Legal Services</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Contract Drafting -->
+                    <div class="card-premium">
+                        <i class="fas fa-file-contract text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Contract Drafting</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Template-based contracts</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic terms</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Inadequate risk coverage</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Customized legal frameworks</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Industry-specific terms</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Comprehensive risk mitigation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compliance Management -->
+                    <div class="card-premium">
+                        <i class="fas fa-shield-alt text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">Compliance Management</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Reactive compliance</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Limited scope coverage</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Periodic reviews only</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Proactive regulatory strategy</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Comprehensive compliance</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Continuous monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General Legal Advisory -->
+                    <div class="card-premium">
+                        <i class="fas fa-gavel text-green-primary text-3xl mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-4">General Legal Advisory</h4>
+                        <div class="comparison-grid">
+                            <div class="mistake-card">
+                                <h5 class="font-semibold text-red-400 mb-2">Common Mistakes</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Generic legal advice</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>One-size-fits-all solutions</li>
+                                    <li class="bullet-point"><i class="fas fa-times"></i>Limited industry context</li>
+                                </ul>
+                            </div>
+                            <div class="approach-card">
+                                <h5 class="font-semibold text-green-primary mb-2">ValueEdge Approach</h5>
+                                <ul class="text-sm text-gray-300">
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Sector-specific legal counsel</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Tailored solutions</li>
+                                    <li class="bullet-point"><i class="fas fa-check"></i>Strategic legal guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How ValueEdge Executes Projects -->
+    <section id="approach" class="section-spacing">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title">How <span class="text-green-primary">ValueEdge</span> Executes Each Project</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-premium text-center">
+                    <div class="text-green-primary text-4xl font-bold mb-4">01</div>
+                    <h4 class="text-xl font-semibold mb-4">Discovery & Analysis</h4>
+                    <p class="text-gray-300">Comprehensive assessment of your business requirements and strategic objectives</p>
+                </div>
+                <div class="card-premium text-center">
+                    <div class="text-green-primary text-4xl font-bold mb-4">02</div>
+                    <h4 class="text-xl font-semibold mb-4">Strategy Development</h4>
+                    <p class="text-gray-300">Customized solutions and strategic frameworks tailored to your specific needs</p>
+                </div>
+                <div class="card-premium text-center">
+                    <div class="text-green-primary text-4xl font-bold mb-4">03</div>
+                    <h4 class="text-xl font-semibold mb-4">Implementation</h4>
+                    <p class="text-gray-300">Structured execution with continuous monitoring and quality assurance</p>
+                </div>
+                <div class="card-premium text-center">
+                    <div class="text-green-primary text-4xl font-bold mb-4">04</div>
+                    <h4 class="text-xl font-semibold mb-4">Optimization</h4>
+                    <p class="text-gray-300">Ongoing refinement and enhancement to ensure maximum value delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule a Call Section -->
+    <section id="schedule" class="section-spacing">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="section-title">Schedule Your <span class="text-green-primary">Consultation</span></h2>
+            <div class="calendly-container">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/alokshah-vecgroup?primary_color=2db814" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title">Get In <span class="text-green-primary">Touch</span></h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="subsection-title">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="bullet-point">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+919920978572" class="text-green-primary hover:underline">+91 9920978572</a>
+                            </div>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:alokshah@vecgroup.in" class="text-green-primary hover:underline">alokshah@vecgroup.in</a>
+                            </div>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <strong>LinkedIn:</strong><br>
+                                <a href="https://www.linkedin.com/company/valueedge-growth/?viewAsMember=true" target="_blank" class="text-green-primary hover:underline">ValueEdge Growth</a>
+                            </div>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address:</strong><br>
+                                The Quorum, 8th Floor, Tower 2A<br>
+                                North Annex, One World Center<br>
+                                Senapati Bapat Marg, Saidham Nagar<br>
+                                Lower Parel, Mumbai, Maharashtra 400013
+                            </div>
+                        </div>
+                        <div class="bg-green-primary bg-opacity-20 border border-green-primary rounded-lg p-4 mt-6">
+                            <p class="text-green-primary font-semibold">
+                                <i class="fas fa-calendar-check mr-2"></i>
+                                Meetings only subject to appointment
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-premium">
+                    <h3 class="subsection-title">Why Choose ValueEdge?</h3>
+                    <div class="space-y-4">
+                        <div class="bullet-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprehensive end-to-end solutions</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15+ years of industry expertise</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Dual expertise in business and legal domains</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customized solutions for each client</span>
+                        </div>
+                        <div class="bullet-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span>From first step to final execution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="logo-container mx-auto mb-6">
+                <img src="https://page.gensparksite.com/v1/base64_upload/ca326943bf89d518478c2c8aa7efe7f3" alt="ValueEdge Consultancy" />
+            </div>
+            <h3 class="text-2xl font-bold text-green-primary mb-4">Coach • Counsel • Create</h3>
+            <p class="text-gray-400 mb-6">
+                ValueEdge Consultancy - Your partner in business excellence and legal compliance
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="mailto:alokshah@vecgroup.in" class="text-gray-400 hover:text-green-primary transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/valueedge-growth/?viewAsMember=true" target="_blank" class="text-gray-400 hover:text-green-primary transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="tel:+919920978572" class="text-gray-400 hover:text-green-primary transition-colors">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-800 text-gray-500">
+                <p>&copy; 2024 ValueEdge Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.card-premium').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDsYccr5xqBzorhIm%2FOW6%2BrYpF8ZU0brmNlXaWfUvUlqRsSy013IyKzeMCzYEVy7Mlb%2B1qPWPp4Rj%2FL3NaPgUKpbx%2B8GySIviPtp31WJpHENZmX6RZ%2F1jMLqDCEFvKwg5Y%2BsPupoGtFHmpj1s1fthCK1i3aff%2FwDWblwr2ZH0GusL4umTzm%2Bc%2Bq%2FPUzISRhGp%2FJwx5jnZNzc2m26XGGvCdSwNPOvl1Kv6WdrOBh%2FJe6DxwE62p6MkZhUgtNYG6n1scFPCyOz0ybzMqUqgDLFbtVbjubX7SZ2RNOu%2BwPI2%2BDVFOJsbDZyN7BYBHwAzR3FKD9mmIvRBBsrHjtCzj9FbMIm2UFijpKFyQjzB%2BQYeuPmlS00h3ucUu5WiaPWQzrYgs5pCmxyF6L355DKF01puLvvRVmD5Uy6kq39vXQUcLL933wRF5%2BvyNca8FeINDKa2vUuI9Dw2A6FbUWpbeRDSJx4ad%2BQiqRu36i1FYvV2FV9est3MsAsdx6j4jTBydgnyIA%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDsYccr5xqBzorhIm/OW6+rYpF8ZU0brmNlXaWfUvUlqRsSy013IyKzeMCzYEVy7Mlb+1qPWPp4Rj/L3NaPgUKpbx+8GySIviPtp31WJpHENZmX6RZ/1jMLqDCEFvKwg5Y+sPupoGtFHmpj1s1fthCK1i3aff/wDWblwr2ZH0GusL4umTzm+c+q/PUzISRhGp/Jwx5jnZNzc2m26XGGvCdSwNPOvl1Kv6WdrOBh/Je6DxwE62p6MkZhUgtNYG6n1scFPCyOz0ybzMqUqgDLFbtVbjubX7SZ2RNOu+wPI2+DVFOJsbDZyN7BYBHwAzR3FKD9mmIvRBBsrHjtCzj9FbMIm2UFijpKFyQjzB+QYeuPmlS00h3ucUu5WiaPWQzrYgs5pCmxyF6L355DKF01puLvvRVmD5Uy6kq39vXQUcLL933wRF5+vyNca8FeINDKa2vUuI9Dw2A6FbUWpbeRDSJx4ad+QiqRu36i1FYvV2FV9est3MsAsdx6j4jTBydgnyIA==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
